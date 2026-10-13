@@ -1,86 +1,13 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="המאגר הפדגוגי של מרכז המחוננים בטכנודע – מערכי שיעור, פעילויות, ניסויים וחומרי עזר במקום אחד.">
-  <title>המאגר הפדגוגי | מרכז המחוננים טכנודע</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;450;500;550;600;650;700;750;800;900&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="assets/technoda-logo.png">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+  <title>המאגר הפדגוגי | טכנודע</title>
+  <meta http-equiv="refresh" content="0;url=https://script.google.com/macros/s/AKfycbwsPbYs6O7wk0wAkh1_9pXDVnyZE9k7gVWiKfwrN9x8bEo5aGf8Vpef4_lNGVjdQMCneA/exec">
 </head>
 <body>
-  <div class="site-shell">
-    <header class="topbar">
-      <a class="brand" href="./" aria-label="לראש עמוד המאגר הפדגוגי">
-        <img src="assets/technoda-logo.png" alt="טכנודע – המוזיאון הישראלי לרפואה ומדע, חדרה">
-        <span class="brand-divider" aria-hidden="true"></span>
-        <span class="brand-label">מרכז המחוננים <span>המאגר הפדגוגי</span></span>
-      </a>
-      <nav class="top-actions" aria-label="ניווט ראשי">
-        <button id="show-all" class="top-link is-active" type="button">כל המאגר</button>
-        <button id="show-favorites" class="top-link" type="button"><span aria-hidden="true">♡</span> המועדפים שלי <span class="favorite-counter" id="fav-count" hidden>0</span></button>
-        <a class="open-drive" href="https://drive.google.com/drive/folders/1Asjwx9sy3SXjmQVRKrGvg9QJ9BTWFlm0?usp=sharing" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7m0-7-9 9M21 13v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h7"/></svg> לתיקייה בדרייב</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-content">
-          <div class="eyebrow"><span class="eyebrow-dot"></span> המקום שבו רעיונות הופכים להתנסויות</div>
-          <h1 id="hero-title">לכל שיעור יש <span>ניצוץ.</span><br>כאן מוצאים אותו.</h1>
-          <p class="hero-description">מאגר מערכי השיעור, הניסויים והפעילויות של מרכז המחוננים בטכנודע. כל הידע של הצוות, זמין במקום אחד — ומוכן להפוך לרגע של גילוי.</p>
-          <div class="search-wrap">
-            <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.7" cy="10.7" r="6.6"/><path d="m16 16 5 5"/></svg>
-            <input id="search" type="search" aria-label="חיפוש במאגר" placeholder="מה נלמד היום? חפשו נושא, מיומנות או מילה מתוך מערך השיעור..." autocomplete="off" spellcheck="false">
-            <kbd class="search-shortcut">Ctrl K</kbd>
-            <button id="clear-search" class="clear-search" type="button" aria-label="נקה חיפוש" hidden>✕</button>
-          </div>
-          <div class="hero-examples"><span>נסו לחפש:</span><button type="button" data-search="אנרגיה">אנרגיה ↗</button><button type="button" data-search="עבודת צוות">עבודת צוות ↗</button><button type="button" data-search="חלל">חלל ↗</button><button type="button" data-search="חדר בריחה">חדר בריחה ↗</button></div>
-        </div>
-        <div class="hero-art" aria-hidden="true"><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><span class="figure-green"></span><span class="figure-blue"></span><span class="figure-yellow"></span><span class="figure-purple"></span><span class="figure-pink"></span><span class="figure-orange"></span><span class="figure-teal"></span><div class="art-caption"><span class="sparkle">✳</span> לחשוב. לגלות.<br><strong>להתנסות.</strong></div></div>
-      </section>
-
-      <section class="overview" aria-label="סקירת המאגר">
-        <div class="stat"><span class="stat-icon stat-blue">▦</span><div><strong id="stat-total">—</strong><span>חומרים במאגר</span></div></div>
-        <div class="stat"><span class="stat-icon stat-purple">✦</span><div><strong id="stat-lessons">—</strong><span>מערכי שיעור ופעילויות</span></div></div>
-        <div class="stat"><span class="stat-icon stat-green">☷</span><div><strong id="stat-topics">—</strong><span>תחומי למידה</span></div></div>
-        <div class="sync-stat"><span class="sync-led"></span><div><strong>מחובר למאגר הטכנודע</strong><span id="sync-line">טוען את פריטי המאגר...</span></div></div>
-      </section>
-
-      <section class="topics-section" aria-labelledby="topics-heading">
-        <div class="section-heading"><div><p class="section-kicker">לאן הסקרנות תיקח אותנו?</p><h2 id="topics-heading">מגלים לפי תחום</h2></div><button id="reset-topics" type="button" class="text-link">הצגת כל הנושאים ←</button></div>
-        <div id="topic-grid" class="topic-grid" aria-label="סינון לפי נושא"></div>
-      </section>
-
-      <section class="library-section" aria-labelledby="library-title">
-        <div class="section-heading library-heading"><div><p class="section-kicker">התוכן של המורים, בשביל המורים</p><h2 id="library-title">הספרייה הפדגוגית <span id="results-count" class="result-count"></span></h2></div><span class="library-caption">כל חומר מוביל ישירות לקובץ המקורי בדרייב</span></div>
-        <div class="library-layout">
-          <aside class="filters-panel" aria-labelledby="filters-title">
-            <div class="filter-head"><h3 id="filters-title">סינון חומרים</h3><button id="reset-filters" type="button">ניקוי הכול</button></div>
-            <div class="filter-group"><label for="grade-filter">שכבת גיל</label><div class="select-wrap"><select id="grade-filter"><option value="">כל השכבות</option><option value="ג׳">כיתה ג׳</option><option value="ד׳">כיתה ד׳</option><option value="ה׳">כיתה ה׳</option><option value="ו׳">כיתה ו׳</option><option value="ז׳">כיתה ז׳</option><option value="ח׳">כיתה ח׳</option><option value="ט׳">כיתה ט׳</option><option value="general">פעילויות הורים וילדים</option></select></div></div>
-            <div class="filter-group"><label for="topic-filter">תחום דעת</label><div class="select-wrap"><select id="topic-filter"><option value="">כל התחומים</option></select></div></div>
-            <div class="filter-group"><span class="filter-label">סוג החומר</span><div id="kind-filters" class="kind-options"></div></div>
-            <div class="filter-footnote"><span aria-hidden="true">💡</span><p>טיפ קטן: החיפוש מזהה גם מילים מתוך המסמכים לאחר הפעלת הסנכרון המלא.</p></div>
-          </aside>
-          <div class="results-area">
-            <div class="results-toolbar"><div class="toolbar-right"><button id="mobile-filter-toggle" type="button" class="mobile-filter-toggle">☷ סינון</button><span id="results-description" role="status" aria-live="polite">טוען חומרים...</span></div><label class="sort-box" for="sort"><span>מיון:</span><select id="sort"><option value="relevance">הכי מתאימים</option><option value="newest">עודכנו לאחרונה</option><option value="alphabetic">לפי שם</option></select></label></div>
-            <div class="active-filters" id="active-filters" hidden></div>
-            <div id="cards" class="cards-grid"></div>
-            <div class="empty-state" id="empty-state" hidden><div class="empty-graphic">⌕</div><h3>לא מצאנו פעילות שמתאימה לחיפוש</h3><p>נסו מילה אחרת, שכבת גיל שונה או הסירו את הסינונים.</p><button type="button" id="empty-reset">להצגת כל החומרים</button></div>
-            <div class="load-more" id="load-more-area" hidden><button type="button" id="load-more">הצגת חומרים נוספים ↓</button></div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="footer"><div><img src="assets/technoda-logo.png" alt="טכנודע"><span>נוצר עבור צוות ההוראה של מרכז המחוננים בטכנודע, חדרה.</span></div><span>לומדים יחד, מגלים יחד ✳</span></footer>
-  </div>
-
-  <dialog class="detail-dialog" id="details"><button type="button" class="dialog-close" id="close-details" aria-label="סגירת פרטי הפעילות">✕</button><div id="detail-body"></div></dialog>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <p>מעבירים אותך למאגר הפדגוגי של הטכנודע...</p>
 </body>
 </html>
