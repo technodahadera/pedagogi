@@ -68,7 +68,7 @@
     let serial = 0;
     let delay;
     const escapeHtml = value => String(value == null ? '' : value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    const API_URL = 'https://script.google.com/macros/s/AKfycbxdcGojcyD6yOdryIE3qcsH-31GgIgqRdCy4PNkJ8cMJY-GBa37F3003EpYeHIFhoizGg/exec';
+    const API_URL = 'https://script.google.com/macros/s/AKfycbwhLBgghbAcqM4lMQhYgOBz3R4ua9srYezLocdJaisW2C6iWRBOA5B4JOFVKFwu-9uCVg/exec';
     function load() {
       const token = ++serial;
       $('results').classList.add('busy');
